@@ -6,11 +6,11 @@ const ctx = canvas.getContext('2d');
 
 
 let dir = 0;
-let speed = 4;
+let speed = 3;
 let walls = [];
 let blocks = [];
 let pause = false;
-let timeLife = 70;
+let timeLife = 65;
 let ballena = new Image();
 let piedra = new Image();
 let fondo = new Image();
@@ -528,10 +528,11 @@ const paint = () => {
 }
 
 const replay = () => {
-    if(whale.x !== 705 || whale.y !== 718) {
-        audioLevel.play()
+    if(whale.x === 705 || whale.y === 718) {
+        audioWin.play()
+        audioLevel.pause();
     }else {
-        audioWin.play();
+        audioLevel.play();
     }
 }
 
