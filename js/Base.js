@@ -11,8 +11,6 @@ export class Base {
 
         ctx.fillStyle = this.c;
         ctx.fillRect (this.x, this.y, this.w, this.h);
-        ctx.strokeRect (this.x, this.y, this.w, this.h);
-
     }
 
     seTocan(target){
@@ -70,7 +68,18 @@ export class Target extends Base {
 }
 
 export class Laberinto extends Base {
-    constructor(x,y,w,h,c){
-        super(x, y, w, h, c); 
+    constructor(x,y,w,h,c, img ){
+        super(x, y, w, h,c);
+        this.img = img;
+    }
+
+
+  
+
+
+    paintImagen(ctx) {
+        ctx.fillStyle = ctx.createPattern(this.img, 'repeat');
+        ctx.fillRect (this.x, this.y, this.w, this.h);
+        //ctx.strokeRect (this.x, this.y, this.w, this.h);
     }
 }
