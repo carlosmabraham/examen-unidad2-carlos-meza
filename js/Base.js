@@ -12,31 +12,13 @@ export class Base {
         ctx.fillStyle = this.c;
         ctx.fillRect (this.x, this.y, this.w, this.h);
     }
-
-    seTocan(target){
-
-        if(this.x < target.x + target.w &&  
-           this.x + this.w > target.x   &&    
-           this.y < target.y + target.h &&   
-           this.y + this.h > target.y)
-            {
-                return true;
-            }
-        return false;
-    }
 }
 
 
 export class Player extends Base{
-    constructor(x,y,w,h,c){
-        super(x, y, w, h, c);
-        this.life = 50;
-    }
-
-    paint(ctx){
-        ctx.fillStyle = this.c;
-        ctx.fillRect (this.x, this.y, this.w, this.h);
-        ctx.strokeRect (this.x, this.y, this.w, this.h);
+    constructor(x,y,w,h, img){
+        super(x, y, w, h);
+        this.img = img;
     }
 
     seTocan(target){
@@ -51,35 +33,20 @@ export class Player extends Base{
         return false;
     }
 
-
-}
-
-export class Target extends Base {
-    constructor(x,y,w,h,c){
-        super(x, y, w, h, c);
-        this.life = 50;
-    }
-
-    paint(ctx){
-        ctx.fillStyle = this.c;
-        ctx.fillRect (this.x, this.y, this.w, this.h);
-        ctx.strokeRect (this.x, this.y, this.w, this.h);
+    setImagen(ctx) {
+        ctx.drawImage( this.img, this.x, this.y, this.w, this.h );
     }
 }
+
 
 export class Laberinto extends Base {
-    constructor(x,y,w,h,c, img ){
-        super(x, y, w, h,c);
+    constructor(x,y,w,h, img ){
+        super(x, y, w, h);
         this.img = img;
     }
 
-
-  
-
-
-    paintImagen(ctx) {
+    setImagen(ctx) {
         ctx.fillStyle = ctx.createPattern(this.img, 'repeat');
         ctx.fillRect (this.x, this.y, this.w, this.h);
-        //ctx.strokeRect (this.x, this.y, this.w, this.h);
     }
 }
