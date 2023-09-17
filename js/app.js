@@ -6,7 +6,7 @@ const ctx = canvas.getContext('2d');
 
 
 let dir = 0;
-let speed = 3;
+let speed = 5;
 let walls = [];
 let blocks = [];
 let pause = false;
@@ -388,7 +388,7 @@ document.addEventListener("keydown", (e) =>{
 });
 
 function actualizarCuentaRegresiva() {
-    if(!pause) {
+    if(!pause || !whale.x === 705 || !whale.y === 718) {
         if (timeLife === -1) {
           detenerCuentaRegresiva();
         } else {
@@ -459,7 +459,6 @@ const update = () => {
             }
         }
 
-
         for (let i = blocks.length - 1; i >= 0; i--) {
             if( whale.seTocan(blocks[i]) ) {    
                 switch( dir ) {
@@ -481,6 +480,7 @@ const update = () => {
         }
     }
 
+    replay()
     paint();
     window.requestAnimationFrame(update);
 }
@@ -526,14 +526,22 @@ const paint = () => {
     }
 }
 
-// const replay = () => {
-//     if(whale.x === 705 || whale.y === 718) {
-//         audioWin.play()
-//         audioLevel.pause();
-//     }else {
-//         audioLevel.play();
-//     }
-// }
+const win = () => {
+    if (whale.x === 705 || whale.y === 718) {
+        return false
+    } else {
+        return true
+    }
+}
+
+const replay = () => {
+    if(whale.x === 705 || whale.y === 718) {
+        audioLevel.pause();
+        audioWin.play()
+    }else {
+        audioLevel.play();
+    }
+}
 
 
 window.requestAnimationFrame = (function () {
