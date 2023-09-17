@@ -1,0 +1,48 @@
+.content {
+    display: flex;
+}
+
+canvas {
+    border: 5px solid #000;
+}
+
+.instrucciones {
+    background-color: #407FF6;
+    color: azure;
+    border: 7px solid #F747AF;
+    border-radius: 10px;
+    width: 350px;
+    height: 550px;
+    margin-left: 10px;
+    font-family: monospace;
+}
+
+.instrucciones h1 {
+    text-align: center;
+}
+
+.instrucciones p {
+    padding-left: 7px;
+}
+
+.instrucciones img {
+    width: 200px;
+    height: 200px;
+    padding-left: 50px;
+}
+
+
+.direccion {
+    display: flex;
+}
+.direccion h1 {
+    padding: 10px 15px;
+    margin: 8px 8px;
+    text-align: left;
+    border: 2px solid #F0FFFF;
+    border-radius: 10px;
+}
+
+.direccion h2 {
+    padding-top: 5px;
+}

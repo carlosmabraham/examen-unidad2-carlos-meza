@@ -482,7 +482,6 @@ const update = () => {
     }
 
     paint();
-    replay();
     window.requestAnimationFrame(update);
 }
 
@@ -527,14 +526,14 @@ const paint = () => {
     }
 }
 
-const replay = () => {
-    if(whale.x === 705 || whale.y === 718) {
-        audioWin.play()
-        audioLevel.pause();
-    }else {
-        audioLevel.play();
-    }
-}
+// const replay = () => {
+//     if(whale.x === 705 || whale.y === 718) {
+//         audioWin.play()
+//         audioLevel.pause();
+//     }else {
+//         audioLevel.play();
+//     }
+// }
 
 
 window.requestAnimationFrame = (function () {

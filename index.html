@@ -4,14 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Examen Unidad 2</title>
-    <style>
-        canvas {
-            border: 5px solid #000;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <canvas id="myCanvas" width="740px" height="755px"></canvas>
+    <div class="content">
+        <canvas id="myCanvas" width="740px" height="755px"></canvas>
+        <div class="instrucciones">
+            <h1>Instrucciones</h1>
+            <p>
+                Ayuda a la ballena Sally a encontrar la salida del laberinto y llegar con su manada, ¡Cuidado con las orcas!
+            </p>
+            <div class="direccion">
+                <h1>W</h1>
+                <h2>Arriba</h2>
+            </div>
+            <div class="direccion">
+                <h1>S</h1>
+                <h2>Abajo</h2>
+            </div>
+            <div class="direccion">
+                <h1>A</h1>
+                <h2>Izquierda</h2>
+            </div>
+            <div class="direccion">
+                <h1>D</h1>
+                <h2>Derecha</h2>
+            </div>
+            <img src="/img/ballena_dibujo.png" alt="ballena_dibujo">
+        </div>
+    </div>
     <script type="module" src="js/app.js"></script>
 </body>
 </html>
